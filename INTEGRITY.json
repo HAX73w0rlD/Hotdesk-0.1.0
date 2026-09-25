@@ -1,115 +1,52 @@
 {
-  "README.md": {
-    "sha256": "181152d13a0e53602229e1ea45b7ec37fcb4048f9f904ede62c7eaefcfad11a4",
-    "size": 3395,
-    "type": "file"
+  "checksums": {
+    "CHANGELOG.md": "5f1a25d9a25337d5ddf8445d1518089ce3858c94774ccf490eb784fdebefee9d",
+    "CODE_OF_CONDUCT.md": "c78e96fff44735da2f985ad273c4b5dac49495627dbe371a3f68f0bb18ed18f5",
+    "CONTRIBUTING.md": "7a17ead167113568687155b750ec44d5e252cd03fb091983211d146fe64e00f6",
+    "DOCS.md": "5e67226e3d1cbb028c89b106091c7a73ef42ce683e591e0d4d9bf38187e05cdc",
+    "Hotdesk-0.1.0-x86_64.AppImage": "807e287cbcdc173ba9f2d8a5cd6e24aac35a40b78297c51bdfc0fc600b002224",
+    "Hotdesk-0.1.0-x86_64.AppImage.asc": "f4c78c55c76717b30f0cee262bc61da377de928cd14f8c55620950078d488f74",
+    "Hotdesk-0.1.0-x86_64.AppImage.sig": "6d927d9073f84944c1a4213bf65a8feafe83644549a38ae187ea9fd21c68f351",
+    "INTEGRITY.json": "c041788a79be107c472e9a85467ce9996e00c8dacff55555df7b1b3fdd80649a",
+    "LICENSE": "80f1c7922042fd3141da5a38d66334dec654d8b5defde7a08ab9c6f4ec39048c",
+    "README.md": "1284daf275a625847d030e21df90f3119cf83ea20bd919af5b9c5399efb5c020",
+    "SECURITY.md": "a03fc27f82e6e32a78c2ebbfe91501fd9c347c5695efd9159fbe160add7e5f1e",
+    "app/__init__.py": "4349067fe03732d667f7cd3ac94bc6c6767feb8b8ed2ad6fb39f9941d30c9aed",
+    "app/config/__init__.py": "63ca1d05f4e706455bd86a484db523f88d98e33c106638d0377e3a6a14f0a3d9",
+    "app/config/encrypted_config.py": "992e87258c43f663d53a5dbe3f2b96c3562198a69830b6418f2b235c528bdb4d",
+    "app/desktop_app.py": "67262977eecad922e1f27df53019fd53aecd40f1fdda60ca9b92965fc56fefc2",
+    "app/desktop_storage.py": "0c7ce2118a196bafb4ac25f5c7a2eefefc0b0cc2e1f57d584fa0b167703b4fea",
+    "hotdesk/__init__.py": "4e774a92cf0ad19076b773245ccbf463b9a04192d0d9c617b75e02588f3b491d",
+    "packaging-appimage/AppRun": "4f868f2a9142cdc583d9f217d32953508dd7b7489660ff075026780f5b613a17",
+    "packaging-appimage/build-appimage.sh": "798505e551d1f6ff5ae73fd138671d00415b1d30899ef0f08a593701342d2865",
+    "packaging-appimage/hotdesk.desktop": "522e90508f0af7f2d39eb14e586544a3f9b720259d5ef52e5f799af12e242abb",
+    "packaging-appimage/hotdesk.svg": "50f1203462cf290171fab98f740b7c589ef784ed090622ef4eb2925d69f20112",
+    "packaging-appimage/install-fuse.sh": "5aeaee049664c434240f9df9c5e46acad533fa95c325f41f7693c1e742ae5029",
+    "packaging/appimage/AppRun": "4f868f2a9142cdc583d9f217d32953508dd7b7489660ff075026780f5b613a17",
+    "packaging/appimage/build-appimage.sh": "798505e551d1f6ff5ae73fd138671d00415b1d30899ef0f08a593701342d2865",
+    "packaging/appimage/hotdesk.desktop": "522e90508f0af7f2d39eb14e586544a3f9b720259d5ef52e5f799af12e242abb",
+    "packaging/appimage/hotdesk.svg": "50f1203462cf290171fab98f740b7c589ef784ed090622ef4eb2925d69f20112",
+    "packaging/appimage/install-fuse.sh": "5aeaee049664c434240f9df9c5e46acad533fa95c325f41f7693c1e742ae5029",
+    "pyproject.toml": "035b76f7be3f3c7fcf6a0f289e38a3e90fc764f5945f908611fbac74698197e0",
+    "scripts/__pycache__/check_integrity.cpython-313.pyc": "df773232affe9dcd28d85c22010d5e7887be6a02142685946f4f9ff6b4e4196e",
+    "scripts/__pycache__/generate_license.cpython-313.pyc": "b2aeb20b31a533a33b0675014c43a8ec504e7d5bd033956d54bab86901ec5eaf",
+    "scripts/__pycache__/license_check.cpython-313.pyc": "92630981893e3f1a91651108dab5d1f9ad0f32cb643098a4c754750b0d1dc98a",
+    "scripts/backup-data.sh": "b6616d2eca62f0e94731f4f8a71a57b576750762a90accd65e3e6ada1a64797d",
+    "scripts/build-appimage.sh": "bfaf06b41e7019d967d62a430d5aded88089526c30e98665da2ab0d7b7c95209",
+    "scripts/check-updates.sh": "fc38fe863108527e4cfcf0429d7e2ef00cc5d3533829ebea5af18517ab82c74c",
+    "scripts/check_integrity.py": "eba372701acc6a0fc56ad6eb6328a18fcb8cb7dd4ab243e54f4f88e966e34608",
+    "scripts/generate_license.py": "a8b512f783198f58d36b500f135d2c16f4fa6f382edd56c1e47873271a0a6f81",
+    "scripts/install-hotdesk.sh": "bf6b7afe5f4aca53c391d57b1c723eab7eb321f506f7bc0ef2e2fb0390a08a09",
+    "scripts/license_check.py": "641d763154035769f6b0873b95428b10f051b8873506bc9e6bd3de69b43c5337",
+    "scripts/sign_appimage.sh": "f7e2a5d93b9db3d9e7d635a9c7ca7f0c1ffabdba9f0f08146a3ac7edb0de533e",
+    "scripts/signature_info.json": "0f7dd3b59f766f1ccbbde9f5210432e1c245018b47ad1e6bd05b476880e6b064",
+    "scripts/verify-integrity.sh": "773709b84a97aefaf3b967627dfc7c2430fa364da31686401310ab34825cec0d",
+    "scripts/verify.sh": "fe0f0f7def9e87a2ade8d4031b456ae00a1a69b7a5c2796eeab14ab0d7c320a7"
   },
-  "app/": {
-    "type": "directory"
+  "generated": "2026-09-25T12:13:00.995893+00:00",
+  "metadata": {
+    "application": "Hotdesk",
+    "description": "SHA-256 Integrit\u00e4tspr\u00fcfung"
   },
-  "app/__init__.py": {
-    "sha256": "4349067fe03732d667f7cd3ac94bc6c6767feb8b8ed2ad6fb39f9941d30c9aed",
-    "size": 56,
-    "type": "file"
-  },
-  "app/api/": {
-    "type": "directory"
-  },
-  "app/config/": {
-    "type": "directory"
-  },
-  "app/config/__init__.py": {
-    "sha256": "63ca1d05f4e706455bd86a484db523f88d98e33c106638d0377e3a6a14f0a3d9",
-    "size": 42,
-    "type": "file"
-  },
-  "app/desktop_app.py": {
-    "sha256": "321243ff9a07d774838b3b72357af450dd775854dc0b7b26ef82dd7323afe7e5",
-    "size": 46368,
-    "type": "file"
-  },
-  "app/desktop_storage.py": {
-    "sha256": "0c7ce2118a196bafb4ac25f5c7a2eefefc0b0cc2e1f57d584fa0b167703b4fea",
-    "size": 56525,
-    "type": "file"
-  },
-  "app/models/": {
-    "type": "directory"
-  },
-  "app/services/": {
-    "type": "directory"
-  },
-  "app/utils/": {
-    "type": "directory"
-  },
-  "bin/": {
-    "type": "directory"
-  },
-  "bin/appimagetool": {
-    "sha256": "b90f4a8b18967545fda78a445b27680a1642f1ef9488ced28b65398f2be7add2",
-    "size": 8811712,
-    "type": "file"
-  },
-  "docker/": {
-    "type": "directory"
-  },
-  "frontend/": {
-    "type": "directory"
-  },
-  "frontend/public/": {
-    "type": "directory"
-  },
-  "frontend/src/": {
-    "type": "directory"
-  },
-  "hotdesk/": {
-    "type": "directory"
-  },
-  "hotdesk/__init__.py": {
-    "sha256": "4e774a92cf0ad19076b773245ccbf463b9a04192d0d9c617b75e02588f3b491d",
-    "size": 204,
-    "type": "file"
-  },
-  "packaging/": {
-    "type": "directory"
-  },
-  "packaging/appimage/": {
-    "type": "directory"
-  },
-  "packaging/appimage/AppRun": {
-    "sha256": "4f868f2a9142cdc583d9f217d32953508dd7b7489660ff075026780f5b613a17",
-    "size": 417,
-    "type": "file"
-  },
-  "packaging/appimage/build-appimage.sh": {
-    "sha256": "798505e551d1f6ff5ae73fd138671d00415b1d30899ef0f08a593701342d2865",
-    "size": 1460,
-    "type": "file"
-  },
-  "packaging/appimage/hotdesk.desktop": {
-    "sha256": "522e90508f0af7f2d39eb14e586544a3f9b720259d5ef52e5f799af12e242abb",
-    "size": 161,
-    "type": "file"
-  },
-  "packaging/appimage/hotdesk.svg": {
-    "sha256": "50f1203462cf290171fab98f740b7c589ef784ed090622ef4eb2925d69f20112",
-    "size": 192,
-    "type": "file"
-  },
-  "packaging/appimage/install-fuse.sh": {
-    "sha256": "5aeaee049664c434240f9df9c5e46acad533fa95c325f41f7693c1e742ae5029",
-    "size": 714,
-    "type": "file"
-  },
-  "pyproject.toml": {
-    "sha256": "035b76f7be3f3c7fcf6a0f289e38a3e90fc764f5945f908611fbac74698197e0",
-    "size": 535,
-    "type": "file"
-  },
-  "scripts/": {
-    "type": "directory"
-  },
-  "tests/": {
-    "type": "directory"
-  }
+  "version": "1.0"
 }

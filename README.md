@@ -1,189 +1,190 @@
-<h1 align="center">
-  <img src="packaging-appimage/hotdesk.svg" alt="Hotdesk" width="128" />
-  <br/>
-  Hotdesk
-</h1>
+# Hotdesk v0.1.1
 
-<div align="center">
+**Hotdesk** ist eine lokale Desktop-Anwendung für Kunden, Rechnungen, Produkte und Zahlungen. Die Oberfläche ist eine eigenständige Python/Tk-GUI – keine Browser-Oberfläche und kein PHP.
 
-**Lokale Desktop-Anwendung für Kunden, Rechnungen, Produkte und Zahlungen**
+## Funktionen
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Python](https://img.shields.io/badge/Python-%3E%3D3.11-blue)
-![Platform](https://img.shields.io/badge/Platform-Linux%20x86_64-lightgrey)
-![AppImage](https://img.shields.io/badge/Bundle-AppImage-FF69B4)
-[![Downloads](https://img.shields.io/github/downloads/HAX73w0rlD/Hotdesk-0.1.0/total)](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/releases)
+- Dashboard mit offenen, überfälligen und Gesamtbeträgen
+- Kundenverwaltung mit Debitoren- und Kontaktdaten
+- Produkte und Leistungen mit Netto-Preis und Steuersatz
+- Rechnungen mit Positionen, Fälligkeit und Zahlungsstatus
+- Teilzahlungen und vollständige Zahlungen
+- Automatische Überfälligkeitserkennung
+- SQLite-Datenbank mit WAL und Audit-Log
+- PCAS-Import für `Kunden.txt` (Debitoren) und `RAImport1` (Rechnungsausgänge) mit detaillierten Fehlermeldungen
+- DATEV-CSV-Export (Debitoren, Konten und Buchungsstapel)
+- Lokale Backups mit und ohne Zeitstempel
+- **JSON-Export** aller Daten mit SHA-256-Prüfsumme
+- **Automatisches Backup mit Zeitstempel**
+- Verbesserte Treeview-Ansicht mit optimalen Spaltenbreiten
+- Splash-Screen beim Start
+- Über-Dialog (F12) mit Versionsinfo und Prüfsumme
+- Deutsche Oberfläche und Tastaturkürzel
 
-</div>
+## Sicherheit
 
----
+Hotdesk implementiert einen **5-Schicht-Sicherheitsmechanismus**:
 
-## ✨ Überblick
+1. **GPG-Signatur** – Die AppImage-Datei ist mit RSA-4096 (SHA512) signiert
+2. **SHA-256 Prüfsummen** – Alle Dateien in `INTEGRITY.json` gespeichert und bei Start geprüft
+3. **Lizenzprüfung** – Validierung von Trial-, Basic-, Pro- und Enterprise-Lizenzen
+4. **Anti-Tampering** – AppImage-Hash wird bei jedem Start geprüft; Modifikation = sofortiger Stopp
+5. **Verschlüsselte Konfiguration** – PBKDF2-HMAC-SHA256 (100.000 Iterationen) für sensible Daten
 
-**Hotdesk** ist eine eigenständige Desktop-Anwendung für die Verwaltung von Kunden, Rechnungen, Produkten und Zahlungen. Die Benutzeroberfläche basiert auf **Python/Tkinter** – ohne Browser, ohne PHP, ohne Webserver.
+Alle Sicherheitsmaßnahmen sind in `SECURITY.md` dokumentiert.
 
-Die fertige **AppImage** enthält die gesamte Python-Laufzeit, Tcl/Tk, SQLite und alle Abhängigkeiten. Auf dem Zielsystem sind **keine Installationen** erforderlich – nur ein Linux-x86_64-System mit grafischer Oberfläche und FUSE.
+## Download
 
-## 🚀 Schnellstart
+**Hotdesk-0.1.1-x86_64.AppImage** – [Herunterladen](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/raw/main/Hotdesk-0.1.0-x86_64.AppImage)
 
-### AppImage (empfohlen)
+Die Datei ist mit einer GPG-Detached-Signatur (`Hotdesk-0.1.0-x86_64.AppImage.sig` und `.asc`) gesichert.
+
+Verifizierung:
 ```bash
-chmod +x Hotdesk-0.1.0-x86_64.AppImage
-./Hotdesk-0.1.0-x86_64.AppImage
+./scripts/verify.sh
 ```
 
-### Aus dem Quellcode
-```bash
-sudo apt-get install python3-tk python3-pyinstaller libfuse2t64 desktop-file-utils
-python3 -m pip install --user pyinstaller
-APPIMAGETOOL=/pfad/zu/appimagetool packaging-appimage/build-appimage.sh
-./build/Hotdesk-0.1.0-x86_64.AppImage
-```
-
-### Ohne FUSE
-```bash
-./Hotdesk-0.1.0-x86_64.AppImage --appimage-extract-and-run
-```
-
-## 📋 Funktionen
-
-- **Dashboard** mit offenen, überfälligen und Gesamtbeträgen
-- **Kundenverwaltung** mit Debitoren- und Kontaktdaten
-- **Produkte & Leistungen** mit Netto-Preis und Steuersatz
-- **Rechnungsmanagement** mit Positionen, Fälligkeit und Zahlungsstatus
-- **Teilzahlungen** und vollständige Zahlungen
-- **Automatische Überfälligkeitserkennung**
-- **SQLite-Datenbank** mit WAL und Audit-Log
-- **PCAS-Import** für `Kunden.txt` (Debitoren) und `RAImport1` (Rechnungsausgänge)
-- **DATEV-CSV-Export** (Debitoren, Konten, Buchungsstapel)
-- **Lokale Backups**
-- **Deutsche Oberfläche** mit Tastaturkürzeln
-
-## ⬇️ Herunterladen
-
-**Hotdesk-0.1.0-x86_64.AppImage** (14 MB)
+## Lokal starten
 
 ```bash
-wget https://github.com/HAX73w0rlD/Hotdesk-0.1.0/raw/main/Hotdesk-0.1.0-x86_64.AppImage
-chmod +x Hotdesk-0.1.0-x86_64.AppImage
-./Hotdesk-0.1.0-x86_64.AppImage
+python3 hotdesk.py
 ```
 
-Oder über den Button:
-
-[![Download](https://img.shields.io/badge/Download-Hotdesk--0.1.0--x86_64.AppImage-green?style=for-the-badge)](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/raw/main/Hotdesk-0.1.0-x86_64.AppImage)
-
-## 📁 Datenbank
-
-Bei erstem Start wird automatisch eine SQLite-Datenbank erstellt:
+Beim ersten Start entsteht automatisch:
 ```text
 ~/.local/share/hotdesk/hotdesk.sqlite
+~/.local/share/hotdesk/hotdesk.log
 ```
 
-## 🖼️ Screenshots
+## Standalone ohne System-Python
 
-*Hinweis: Screenshots werden in einer zukünftigen Version ergänzt.*
+Die fertige AppImage enthält die Python-Laufzeit, Tcl/Tk, SQLite und alle für Hotdesk benötigten Python-Module. Auf dem Zielsystem müssen **weder Python noch PHP noch ein Webserver installiert sein**. Benötigt werden nur ein Linux-x86_64-System mit grafischer Oberfläche und – für den normalen AppImage-Mount – FUSE. Die AppImage ist kein statisch gelinktes Binary; sie benötigt weiterhin eine kompatible Linux-glibc-/X11-Basis.
 
-## 📦 Installation
-
-### Voraussetzungen
-- Linux x86_64 (glibc-kompatibel)
-- Grafische Oberfläche (X11/Wayland)
-- FUSE (für AppImage-Mount, optional mit `--appimage-extract-and-run`)
-
-### PCAS-Import
-Über `Einstellungen → PCAS-Import` werden folgende Dateien unterstützt:
-- `Kunden.txt` – Debitoren-/Kundenstammdaten (semikolon-getrennt)
-- `RAImport1` – Rechnungsausgangssätze (153 Zeichen pro Satz)
-
-Die Dateien werden als UTF-8, Windows-1252 oder Latin-1 gelesen. Vor dem Import sollte ein Backup erstellt werden.
-
-### DATEV-Export
-Im Menü `Einstellungen → DATEV-Export` werden Debitoren-, Konten- und Buchungsstapel als CSV exportiert.
-
-## 🏗️ Aufbau
-
-```
-hotdesk/
-├── app/
-│   ├── __init__.py
-│   ├── desktop_app.py      # Hauptanwendung (Tkinter GUI)
-│   ├── desktop_storage.py  # SQLite-Datenbank-Logik
-│   ├── config/
-│   │   └── __init__.py     # Anwendungskonfiguration
-│   └── models/             # Datenmodelle
-├── hotdesk/
-│   └── __init__.py         # Startpunkt (Hauptmodul)
-├── packaging-appimage/     # AppImage-Paketinrichtung
-├── pyproject.toml          # Projektkonfiguration
-├── README.md
-└── LICENSE
-```
-
-## 🔧 Entwicklung
-
-### Voraussetzungen
 ```bash
 sudo apt-get install python3-tk python3-pyinstaller libfuse2t64 desktop-file-utils
 python3 -m pip install --user pyinstaller
+APPIMAGETOOL=/pfad/zu/appimagetool packaging/appimage/build-appimage.sh
 ```
 
-### AppImage bauen
-```bash
-APPIMAGETOOL=/pfad/zu/appimagetool packaging-appimage/build-appimage.sh
+Die erzeugte Datei liegt danach unter:
+```text
+build/Hotdesk-0.1.0-x86_64.AppImage
 ```
 
-### Ausführen
+Starten:
 ```bash
 ./build/Hotdesk-0.1.0-x86_64.AppImage
 ```
 
-### FUSE installieren (falls benötigt)
+FUSE kann nicht automatisch aus der bereits laufenden AppImage heraus installiert werden, weil FUSE bereits zum Mounten benötigt wird. Der separate Helfer fragt nach einer Bestätigung:
 ```bash
-./packaging-appimage/install-fuse.sh
+./packaging/appimage/install-fuse.sh
 ```
 
-## 📄 Lizenz
+Ohne FUSE kann der AppImage-Runtime-Fallback verwendet werden:
+```bash
+./build/Hotdesk-0.1.0-x86_64.AppImage --appimage-extract-and-run
+```
 
-Dieses Projekt steht unter der **MIT License**. Siehe [LICENSE](LICENSE) für Details.
+## Daten und Sicherung
 
-## ⚠️ Haftungsausschluss
+### Automatisches Backup mit Zeitstempel
 
-Diese Anwendung ist ein solider lokaler MVP. Für den Produktivbetrieb mit echten steuerlichen Exporten, Benutzerverwaltung, Audit-Freigaben, DATEV-Zertifizierung und XRechnung/ZUGFeRD ist eine **fachliche und rechtliche Prüfung** erforderlich.
+Im Menü `Einstellungen` können Sie über **Backup mit Zeitstempel** ein automatisches SQLite-Backup mit Zeitstempel im Dateinamen erstellen. Die Datei wird im gewählten Verzeichnis unter `hotdesk_backup_YYYYMMDD_HHMMSS.sqlite` gespeichert.
 
-## 📝 Änderungsprotokoll
+### JSON-Export
 
-### v0.1.0 (2026-09-25)
-- Initiale Veröffentlichung
-- Kundenverwaltung
-- Rechnungsmanagement
-- Produkte & Leistungen
-- Dashboard
-- PCAS-Import
-- DATEV-CSV-Export
-- SQLite-Datenbank mit WAL und Audit-Log
-- AppImage-Build
+Hotdesk unterstützt den Export aller Daten als JSON-Datei mit SHA-256-Prüfsumme. Über **JSON exportieren** im Menü `Einstellungen` werden alle Tabellen (Kunden, Produkte, Rechnungen, Positionen, Zahlungen, Audit-Log) als strukturierte JSON-Datei exportiert. Zusätzlich wird eine `.zip`-Datei mit der JSON-Datei und der Prüfsumme erstellt.
 
-## 🤝 Beitragen
+Die exportierten Daten enthalten:
+- Alle Datensätze mit Metadaten (Export-Datum, Version)
+- SHA-256-Prüfsumme zur Integritätsprüfung
+- Begleitende `.sha256`-Datei
 
-Beiträge sind willkommen! Bitte beachten Sie die [Beitragrichtlinien](CONTRIBUTING.md).
+### PCAS-Import
 
-## 📫 Kontakt
+Im Menü `Einstellungen` öffnen Sie `PCAS-Import`. Die Implementierung unterstützt die auf der PCAS-Schnittstellenseite dokumentierten Dateien:
 
-📧 **buyandlucky@gmail.com**
-🐙 **HAX73w0rlD** – [GitHub](https://github.com/HAX73w0rlD)
+- `Kunden.txt`: Debitoren-/Kundenstammdaten, Semikolon-getrennt, Felder gemäß PCAS-Schnittstellenbeschreibung
+- `RAImport1`: Rechnungsausgangssätze im formatierten PCAS-Import, 153 Zeichen pro Satz
 
-## 🔗 Links
+Die Dateien werden mit `UTF-8`, Windows-1252 oder Latin-1 gelesen. Vor dem Import sollten Sie ein Hotdesk-Backup erstellen. Der Import ist mit einem Audit-Eintrag versehen; doppelte Belegnummern werden nicht erneut angelegt. Nicht eindeutig erkennbare Datensätze werden übersprungen und in der GUI zusammengefasst.
 
-- [AppImage herunterladen](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/releases)
-- [Dokumentation](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/wiki)
-- [Issues](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/issues)
-- [Python-Projekt](https://github.com/HAX73w0rlD/Hotdesk-0.1.0)
+Die aktuelle Umsetzung ist ein dokumentierter PCAS-Standard-Line-Import. Andere PCAS-Versionen, native `.mdb`/`.dbf`-Datenbanken und proprietäre Binärformate werden nicht automatisch verändert; dafür ist eine konkrete Datei/Feldprobe erforderlich.
+
+Die Fehlermeldungen im neuen PCAS-Import zeigen nun detailliert an, welche Zeilen übersprungen wurden und warum (zu wenige Felder, leere Belegnummer, fehlender Kunde, ungültiger Betrag, Datumsfehler).
+
+### Einstellungen und neue Features
+
+Im Menü `Einstellungen` finden Sie die folgenden neuen Funktionen:
+
+- **Backup erstellen**: Manuelles Backup mit Dateiauswahl
+- **Backup mit Zeitstempel**: Automatisches Backup mit Zeitstempel im Verzeichnis
+- **JSON exportieren**: Export aller Daten als JSON mit Prüfsumme
+
+Die Einstellungen-Seite zeigt nun auch die Option **JSON exportieren** und **Backup mit Zeitstempel** neben den bestehenden Funktionen.
+
+### Tastenkürzel
+
+```
+Ctrl+N: Neuer Kunde
+Ctrl+I: Neue Rechnung
+F1:   Hilfe
+F5:   Aktuelle Ansicht aktualisieren
+F12:  Über Hotdesk (Versionsinfo und Prüfsumme)
+```
+
+### Splash-Screen
+
+Beim Start von Hotdesk wird ein Splash-Screen mit Fortschrittsbalken angezeigt, bis die Anwendung vollständig geladen ist.
+
+### Über-Dialog
+
+Drücken Sie **F12**, um den Über-Dialog zu öffnen. Dieser zeigt:
+- Anwendungsname und Version
+- Lizenzinformation
+- Datenbank-Pfad und -Größe
+- SHA-256-Prüfsumme der Datenbank
+
+## Installation
+
+### Python-Abhängigkeiten
+
+```bash
+python3 -m pip install --user reportlab PyPDF2
+```
+
+### Entwicklung
+
+```bash
+python3 -m py_compile app/*.py
+python3 -m py_compile hotdesk/__init__.py
+```
+
+### Testing
+
+```bash
+python3 -m py_compile app/*.py
+```
+
+### Sicherheitsprüfung
+
+```bash
+# Integrität prüfen
+python3 scripts/check_integrity.py --verify
+
+# GPG-Signatur prüfen
+./scripts/sign_appimage.sh --verify
+
+# Vollständige Verifizierung
+./scripts/verify.sh
+```
+
+## Lizenz
+
+Hotdesk steht unter der [MIT License](LICENSE).
 
 ---
 
-<div align="center">
-
-Made with ❤️ für lokale Buchhaltung
-
-</div>
+*Letzte Aktualisierung: 2026-09-25*
+*Hotdesk v0.1.1 – Sicherheits-Updates und Projektabschluss*

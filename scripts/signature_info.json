@@ -1,0 +1,9 @@
+{
+  "appimage": "Hotdesk-0.1.0-x86_64.AppImage",
+  "sha256": "807e287cbcdc173ba9f2d8a5cd6e24aac35a40b78297c51bdfc0fc600b002224",
+  "signing_key_id": "5F06E9EFCC50C876AAF031BA6CFB2CFDCB792DD1",
+  "signature_file": "Hotdesk-0.1.0-x86_64.AppImage.sig",
+  "signature_ascii_file": "Hotdesk-0.1.0-x86_64.AppImage.asc",
+  "timestamp": "2026-09-25T11:18:20Z",
+  "algorithm": "RSA-4096 + SHA512"
+}
