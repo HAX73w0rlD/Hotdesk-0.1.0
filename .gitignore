@@ -1,18 +1,19 @@
 # Build & Distribution
 build/
 dist/
-*.egg-info/
+
+# Python
 __pycache__/
 *.pyc
 *.pyo
+*.egg-info/
+.egg-info/
 
 # Database
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
 .hotdesk/
-.hotdesk
-*.db
 
 # IDE
 .idea/
@@ -25,35 +26,22 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Python
+# Environment
+.env
+.env.local
 .venv/
 venv/
-env/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
+
+# Test & Coverage
+tests/__pycache__/
 .coverage
 htmlcov/
 .pytest_cache/
-hypothesis/
 
-# PyInstaller
-build/
-dist/
-*.spec
-
-# Packaging
-packaging-appimage/*.png
-*.log
-
-# Misc
-*.log
-.env
-.env.local
-*.tmp
-*.bak
-
-# GitHub
-*.pdf
-*.doc
-*.docx
+# Hotdesk-specific cookies
+hotdesk.cookies
+hotdesk-cookies.txt
+hotdesk-qc.sqlite
+hotdesk-test.sqlite
+redirect.cookies
+unauth.cookies

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hotdesk
+Comment=Lokale Kunden- und Rechnungsverwaltung
+Exec=hotdesk
+Icon=hotdesk
+Terminal=false
+Categories=Office;Finance;

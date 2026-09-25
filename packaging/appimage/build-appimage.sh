@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
+BUILD="$ROOT/build"
+STAGE="$BUILD/AppDir"
+OUT="$BUILD/Hotdesk-0.1.0-x86_64.AppImage"
+FINAL="$ROOT/Hotdesk-0.1.0-x86_64.AppImage"
+APPIMAGETOOL="${APPIMAGETOOL:-$(command -v appimagetool || true)}"
+[[ -x "$APPIMAGETOOL" ]] || { echo 'appimagetool fehlt. Setze APPIMAGETOOL.' >&2; exit 1; }
+rm -rf "$STAGE"
+mkdir -p "$STAGE/usr/bin" "$STAGE/usr/share/applications" "$STAGE/usr/share/icons/hicolor/scalable/apps"
+python3 -m PyInstaller --noconfirm --clean --onedir --windowed --name hotdesk --distpath "$BUILD/pyinstaller" --workpath "$BUILD/pyinstaller-work" --specpath "$BUILD" --paths "$ROOT" --add-data "$ROOT/app:app" --collect-all tkinter --collect-all reportlab --collect-all PyPDF2 "$ROOT/hotdesk/__init__.py"
+cp -a "$BUILD/pyinstaller/hotdesk/." "$STAGE/usr/bin/"
+cp "$ROOT/packaging/appimage/AppRun" "$STAGE/AppRun"
+cp "$ROOT/packaging/appimage/hotdesk.desktop" "$STAGE/usr/share/applications/hotdesk.desktop"
+cp "$ROOT/packaging/appimage/hotdesk.svg" "$STAGE/usr/share/icons/hicolor/scalable/apps/hotdesk.svg"
+cp "$ROOT/packaging/appimage/hotdesk.desktop" "$STAGE/hotdesk.desktop"
+cp "$ROOT/packaging/appimage/hotdesk.svg" "$STAGE/hotdesk.svg"
+ln -sf hotdesk.svg "$STAGE/.DirIcon"
+chmod 755 "$STAGE/AppRun"
+export ARCH=x86_64
+"$APPIMAGETOOL" "$STAGE" "$OUT"
+chmod 755 "$OUT"
+cp -f "$OUT" "$FINAL"
+chmod 755 "$FINAL"
+printf 'Erstellt: %s\n' "$FINAL"

@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+# Nur POSIX-Shellfunktionen verwenden: keine Abhängigkeit von bash, readlink,
+# dirname oder einem System-Python. Die Python-Runtime liegt vollständig im AppImage.
+HERE=$(CDPATH= cd -- "${0%/*}" && pwd)
+export HOTDESK_DATA_DIR="${HOTDESK_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/hotdesk}"
+export PYTHONUNBUFFERED=1
+unset PYTHONHOME PYTHONPATH PYTHONSTARTUP
+exec "$HERE/usr/bin/hotdesk" "$@"

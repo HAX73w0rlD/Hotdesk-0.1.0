@@ -1,0 +1,115 @@
+{
+  "README.md": {
+    "sha256": "181152d13a0e53602229e1ea45b7ec37fcb4048f9f904ede62c7eaefcfad11a4",
+    "size": 3395,
+    "type": "file"
+  },
+  "app/": {
+    "type": "directory"
+  },
+  "app/__init__.py": {
+    "sha256": "4349067fe03732d667f7cd3ac94bc6c6767feb8b8ed2ad6fb39f9941d30c9aed",
+    "size": 56,
+    "type": "file"
+  },
+  "app/api/": {
+    "type": "directory"
+  },
+  "app/config/": {
+    "type": "directory"
+  },
+  "app/config/__init__.py": {
+    "sha256": "63ca1d05f4e706455bd86a484db523f88d98e33c106638d0377e3a6a14f0a3d9",
+    "size": 42,
+    "type": "file"
+  },
+  "app/desktop_app.py": {
+    "sha256": "321243ff9a07d774838b3b72357af450dd775854dc0b7b26ef82dd7323afe7e5",
+    "size": 46368,
+    "type": "file"
+  },
+  "app/desktop_storage.py": {
+    "sha256": "0c7ce2118a196bafb4ac25f5c7a2eefefc0b0cc2e1f57d584fa0b167703b4fea",
+    "size": 56525,
+    "type": "file"
+  },
+  "app/models/": {
+    "type": "directory"
+  },
+  "app/services/": {
+    "type": "directory"
+  },
+  "app/utils/": {
+    "type": "directory"
+  },
+  "bin/": {
+    "type": "directory"
+  },
+  "bin/appimagetool": {
+    "sha256": "b90f4a8b18967545fda78a445b27680a1642f1ef9488ced28b65398f2be7add2",
+    "size": 8811712,
+    "type": "file"
+  },
+  "docker/": {
+    "type": "directory"
+  },
+  "frontend/": {
+    "type": "directory"
+  },
+  "frontend/public/": {
+    "type": "directory"
+  },
+  "frontend/src/": {
+    "type": "directory"
+  },
+  "hotdesk/": {
+    "type": "directory"
+  },
+  "hotdesk/__init__.py": {
+    "sha256": "4e774a92cf0ad19076b773245ccbf463b9a04192d0d9c617b75e02588f3b491d",
+    "size": 204,
+    "type": "file"
+  },
+  "packaging/": {
+    "type": "directory"
+  },
+  "packaging/appimage/": {
+    "type": "directory"
+  },
+  "packaging/appimage/AppRun": {
+    "sha256": "4f868f2a9142cdc583d9f217d32953508dd7b7489660ff075026780f5b613a17",
+    "size": 417,
+    "type": "file"
+  },
+  "packaging/appimage/build-appimage.sh": {
+    "sha256": "798505e551d1f6ff5ae73fd138671d00415b1d30899ef0f08a593701342d2865",
+    "size": 1460,
+    "type": "file"
+  },
+  "packaging/appimage/hotdesk.desktop": {
+    "sha256": "522e90508f0af7f2d39eb14e586544a3f9b720259d5ef52e5f799af12e242abb",
+    "size": 161,
+    "type": "file"
+  },
+  "packaging/appimage/hotdesk.svg": {
+    "sha256": "50f1203462cf290171fab98f740b7c589ef784ed090622ef4eb2925d69f20112",
+    "size": 192,
+    "type": "file"
+  },
+  "packaging/appimage/install-fuse.sh": {
+    "sha256": "5aeaee049664c434240f9df9c5e46acad533fa95c325f41f7693c1e742ae5029",
+    "size": 714,
+    "type": "file"
+  },
+  "pyproject.toml": {
+    "sha256": "035b76f7be3f3c7fcf6a0f289e38a3e90fc764f5945f908611fbac74698197e0",
+    "size": 535,
+    "type": "file"
+  },
+  "scripts/": {
+    "type": "directory"
+  },
+  "tests/": {
+    "type": "directory"
+  }
+}
