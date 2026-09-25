@@ -156,7 +156,8 @@ Beiträge sind willkommen! Bitte beachten Sie die [Beitragrichtlinien](CONTRIBUT
 
 ## 📫 Kontakt
 
-**HAX73w0rlD** – [GitHub](https://github.com/HAX73w0rlD)
+📧 **buyandlucky@gmail.com**
+🐙 **HAX73w0rlD** – [GitHub](https://github.com/HAX73w0rlD)
 
 ## 🔗 Links
 
