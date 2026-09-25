@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Hotdesk
+GenericName=Buchhaltung
+Comment=Lokale Desktop-Anwendung für Kunden, Rechnungen, Produkte und Zahlungen
+Exec=/home/oem/workspace/hotdesk/run-hotdesk.sh
+Icon=/home/oem/workspace/hotdesk/hotdesk.svg
+Terminal=false
+Categories=Office;Finance;
+StartupNotify=true
+Keywords=invoice;billing;accounting;datev;
+MimeType=application/x-hotdesk;
+Actions=
