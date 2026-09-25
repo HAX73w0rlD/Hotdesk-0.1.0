@@ -1,0 +1,60 @@
+# Build & Distribution
+build/
+dist/
+*.AppImage
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# Database
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.hotdesk/
+.hotdesk
+*.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+.venv/
+venv/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+htmlcov/
+.pytest_cache/
+hypothesis/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Packaging
+packaging-appimage/*.png
+*.log
+
+# Misc
+*.log
+.env
+.env.local
+*.tmp
+*.bak
+
+# GitHub
+*.pdf
+*.doc
+*.docx
