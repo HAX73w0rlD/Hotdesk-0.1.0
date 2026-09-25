@@ -59,6 +59,20 @@ APPIMAGETOOL=/pfad/zu/appimagetool packaging-appimage/build-appimage.sh
 - **Lokale Backups**
 - **Deutsche Oberfläche** mit Tastaturkürzeln
 
+## ⬇️ Herunterladen
+
+**Hotdesk-0.1.0-x86_64.AppImage** (14 MB)
+
+```bash
+wget https://github.com/HAX73w0rlD/Hotdesk-0.1.0/raw/main/Hotdesk-0.1.0-x86_64.AppImage
+chmod +x Hotdesk-0.1.0-x86_64.AppImage
+./Hotdesk-0.1.0-x86_64.AppImage
+```
+
+Oder über den Button:
+
+[![Download](https://img.shields.io/badge/Download-Hotdesk--0.1.0--x86_64.AppImage-green?style=for-the-badge)](https://github.com/HAX73w0rlD/Hotdesk-0.1.0/raw/main/Hotdesk-0.1.0-x86_64.AppImage)
+
 ## 📁 Datenbank
 
 Bei erstem Start wird automatisch eine SQLite-Datenbank erstellt:
