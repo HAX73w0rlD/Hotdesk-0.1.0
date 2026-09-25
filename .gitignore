@@ -1,7 +1,6 @@
 # Build & Distribution
 build/
 dist/
-*.AppImage
 *.egg-info/
 __pycache__/
 *.pyc
